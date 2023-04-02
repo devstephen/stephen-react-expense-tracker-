@@ -1,14 +1,16 @@
 .new-expense__controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 1rem;
   text-align: left;
+  padding: 20px 50px;
+  transition: all ease 1s;
 }
 
 .new-expense__control label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.9rem;
   display: block;
 }
 
@@ -23,5 +25,9 @@
 }
 
 .new-expense__actions {
+  display: flex;
   text-align: right;
+  margin-top: 25px;
+  margin-left: 400px;
+  transition: linear ease 3s;
 }
