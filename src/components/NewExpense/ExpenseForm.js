@@ -10,6 +10,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
   const [enteredDate, setEnteredDate] = useState('')
+  const [isValid, setIsValid] = useState(true)
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value)
@@ -39,7 +40,10 @@ const ExpenseForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault()
-
+    if (enteredTitle.trim().length === 0) {
+      setIsValid(false)
+      return
+    }
     const expenseData = {
       title: enteredTitle,
       amount: +enteredAmount,
@@ -88,10 +92,7 @@ const ExpenseForm = (props) => {
           <button type='button' onClick={props.onCancel}>
             Cancel
           </button>
-          <button type='submit'>
-            {' '}
-            Add <br /> Expense
-          </button>
+          <button type='submit'> Add Expense</button>
         </div>
       </div>
     </form>
